@@ -1,29 +1,16 @@
 import com.madgag.gif.fmsware.AnimatedGifEncoder;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import javax.imageio.ImageIO;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Iterator;
 import java.util.Properties;
 import java.util.UUID;
 
 public class GifDriver {
-
-    static File screenshotsDirectory = new File("C:\\Projects\\animatedgrid\\src\\main\\resources\\screenshots\\");
     static AnimatedGifEncoder e = new AnimatedGifEncoder();
-
-    public static void deleteFiles() {
-        Iterator it = FileUtils.iterateFiles(screenshotsDirectory, null, false);
-        while (it.hasNext()) {
-            File currentFile = (File) it.next();
-            currentFile.delete();
-        }
-    }
 
     public static void setUpGifEncoder() {
         Properties props = getPropertiesFile();

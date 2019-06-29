@@ -4,10 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -32,14 +29,21 @@ public class SeleniumTests {
         options.addArguments("--disable-notifications");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+    }
+
+    @BeforeMethod
+    public void setupGifEncoder() {
         GifDriver.setUpGifEncoder();
+    }
+
+    @AfterMethod
+    public void stopGifEncoder() {
+        GifDriver.stopGifEncoder();
     }
 
     @AfterClass
     public void teardown() {
         driver.quit();
-        GifDriver.stopGifEncoder();
-        GifDriver.deleteFiles();
     }
 
     @Test
@@ -57,5 +61,19 @@ public class SeleniumTests {
         driver.findElement(By.linkText("POSTS")).click();
         GifDriver.addFrame(driver);
         System.out.println("Stop");
+    }
+
+    @Test
+    public void SecondTest() {
+        driver.get("https://reddit.com");
+        GifDriver.addFrame(driver);
+        WebElement search = driver.findElement(By.id("header-search-bar"));
+        search.sendKeys("WebDriver");
+        GifDriver.addFrame(driver);
+        search.sendKeys(Keys.RETURN);
+        driver.findElement(By.className("s1vwhtdg-4")).click();
+        GifDriver.addFrame(driver);
+        driver.findElement(By.className("s11jmi9t-3")).click();
+        GifDriver.addFrame(driver);
     }
 }
