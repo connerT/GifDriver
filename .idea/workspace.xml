@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3315adc-24a3-4c3b-92de-f4e646f12ba0" name="Default Changelist" comment="" />
+    <list default="true" id="c3315adc-24a3-4c3b-92de-f4e646f12ba0" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -47,16 +49,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/GifDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+            <state relative-caret-position="419">
+              <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1669#1670#0" expanded="true" />
                 <element signature="e#1695#1696#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="38">
+              <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -127,6 +138,7 @@
         <option value="$PROJECT_DIR$/src/main/resources/gifdriver.properties" />
         <option value="$PROJECT_DIR$/src/main/java/SeleniumTests.java" />
         <option value="$PROJECT_DIR$/src/main/java/GifDriver.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -155,31 +167,6 @@
             <path>
               <item name="animatedgrid" type="b2602c69:ProjectViewProjectNode" />
               <item name="animatedgrid" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animatedgrid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animatedgrid" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animatedgrid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animatedgrid" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animatedgrid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animatedgrid" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="animatedgrid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="animatedgrid" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="animatedgrid" type="b2602c69:ProjectViewProjectNode" />
@@ -248,9 +235,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SeleniumTests_firstTest - 2019.06.29 at 07h 35m 19s.xml">
-      <configuration name="SeleniumTests.firstTest" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="SeleniumTests_firstTest - 2019.06.29 at 07h 40m 23s.xml">
       <configuration name="SeleniumTests.firstTest" configurationId="TestNG" />
     </history-entry>
@@ -278,6 +262,9 @@
     <history-entry file="SeleniumTests_firstTest - 2019.06.29 at 08h 36m 19s.xml">
       <configuration name="SeleniumTests.firstTest" configurationId="TestNG" />
     </history-entry>
+    <history-entry file="SeleniumTests_firstTest - 2019.06.29 at 08h 50m 36s.xml">
+      <configuration name="SeleniumTests.firstTest" configurationId="TestNG" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -296,8 +283,8 @@
       <window_info anchor="bottom" id="Messages" weight="0.32936078" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32936078" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -482,13 +469,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/GifDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="61" column="5" lean-forward="true" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
+        <state relative-caret-position="419">
+          <caret line="61" column="5" selection-start-line="61" selection-start-column="5" selection-end-line="61" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1669#1670#0" expanded="true" />
             <element signature="e#1695#1696#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
