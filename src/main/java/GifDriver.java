@@ -6,7 +6,6 @@ import org.openqa.selenium.WebDriver;
 
 import javax.imageio.ImageIO;
 import java.io.File;
-import java.io.FileFilter;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -46,11 +45,6 @@ public class GifDriver {
 
     public static void addFrame(WebDriver driver) {
         File screenshot = takeScreenshot(driver);
-        try {
-            e.addFrame(ImageIO.read(screenshot));
-        } catch (IOException ex) {
-            ex.printStackTrace();
-        }
     }
 
     private static File takeScreenshot(WebDriver driver) {
