@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
+@Listeners(GifTestListener.class)
 public class SeleniumTests {
 
     public WebDriver driver;
@@ -29,16 +30,6 @@ public class SeleniumTests {
         options.addArguments("--disable-notifications");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-    }
-
-    @BeforeMethod
-    public void setupGifEncoder() {
-        GifDriver.setUpGifEncoder();
-    }
-
-    @AfterMethod
-    public void stopGifEncoder() {
-        GifDriver.stopGifEncoder();
     }
 
     @AfterClass

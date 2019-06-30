@@ -7,7 +7,7 @@ import org.openqa.selenium.support.events.WebDriverEventListener;
 public class GifListener implements WebDriverEventListener {
 
     public GifListener() {
-        GifDriver.setUpGifEncoder();
+        GifDriver.setUpGifEncoder("testname");
     }
 
     public void beforeAlertAccept(WebDriver driver) {

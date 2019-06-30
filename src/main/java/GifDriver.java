@@ -1,26 +1,31 @@
 import com.madgag.gif.fmsware.AnimatedGifEncoder;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 
 import javax.imageio.ImageIO;
 import java.io.File;
+import java.io.FileFilter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Properties;
-import java.util.UUID;
 
 public class GifDriver {
-    static AnimatedGifEncoder e = new AnimatedGifEncoder();
 
-    public static void setUpGifEncoder() {
+    static AnimatedGifEncoder e = new AnimatedGifEncoder();
+    static int screenshotCounter = 0;
+
+    public static void setUpGifEncoder(String testName) {
         Properties props = getPropertiesFile();
         e = new AnimatedGifEncoder();
-        UUID random = UUID.randomUUID();
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         String gifDirectory = "src/main/resources/gifs/";
-        e.start(gifDirectory + "gif-" + random + ".gif");
+        e.start(gifDirectory + testName + "-gif-" + timeStamp + ".gif");
         e.setDelay(Integer.parseInt(props.getProperty("gif.delay")));
         e.setRepeat(Integer.parseInt(props.getProperty("gif.repeat")));
-        e.setQuality(1); //highest
+        e.setQuality(Integer.parseInt(props.getProperty("gif.quality")));
     }
 
     private static Properties getPropertiesFile() {
@@ -49,8 +54,30 @@ public class GifDriver {
     }
 
     private static File takeScreenshot(WebDriver driver) {
+        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
         TakesScreenshot screenshot = ((TakesScreenshot) driver);
         File shotFile = screenshot.getScreenshotAs(OutputType.FILE);
+        File destFile = new File("src/main/resources/screenshots/" + screenshotCounter + "-test-" + timeStamp + ".png");
+        try {
+            FileUtils.copyFile(shotFile, destFile);
+            screenshotCounter++;
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
         return shotFile;
+    }
+
+    public static void createGif() {
+        File directory = new File("src/main/resources/screenshots/");
+        String[] entries = directory.list();
+        for (String s : entries) {
+            File currentFile = new File(directory.getPath(), s);
+            try {
+                e.addFrame(ImageIO.read(currentFile));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+        }
+
     }
 }
